@@ -65,7 +65,7 @@ const Navbar: React.FC = () => {
               How It Works
             </Link>
             <Link to="/blog" className={linkClasses('/blog')}>
-              The Blog Spot
+              Resourses
             </Link>
           </div>
 

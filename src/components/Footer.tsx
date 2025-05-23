@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link to="/dashboard" className="text-gray-400 hover:text-primary transition-colors">
-                  Resources
+                  
                 </Link>
               </li>
             </ul>
@@ -68,15 +68,15 @@ const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-primary mr-2 mt-0.5" />
-                <span className="text-gray-400">123 Innovation Drive, Tech Park, CA 92123</span>
+                <span className="text-gray-400">1, KN 78 St, Kigali, Rwanda</span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-primary mr-2" />
-                <span className="text-gray-400">+1 (555) 123-4567</span>
+                <span className="text-gray-400">+250 787 066 219</span>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-primary mr-2" />
-                <span className="text-gray-400">contact@umurimo.com</span>
+                <span className="text-gray-400">info@umurimo.com</span>
               </li>
             </ul>
           </div>

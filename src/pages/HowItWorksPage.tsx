@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 
 const HowItWorksPage: React.FC = () => {
-  const [activeAudience, setActiveAudience] = useState<'employers' | 'talents'>('employers');
+  const [activeAudience, setActiveAudience] = useState<'talents' | 'employers'>('talents');
 
   const employerSteps = [
     {
@@ -71,21 +71,11 @@ const HowItWorksPage: React.FC = () => {
               How Umurimo Works
             </h1>
             <p className="text-xl mb-8">
-              Whether you're hiring or looking for your next opportunity, we've got you covered.
+              Whether you're looking for your next opportunity or hiring talent, we've got you covered.
             </p>
             
             {/* Audience Toggle */}
             <div className="inline-flex rounded-lg bg-white/10 p-1">
-              <button
-                onClick={() => setActiveAudience('employers')}
-                className={`px-6 py-2 rounded-md text-sm font-medium transition-colors ${
-                  activeAudience === 'employers'
-                    ? 'bg-white text-primary'
-                    : 'text-white hover:bg-white/5'
-                }`}
-              >
-                For Employers
-              </button>
               <button
                 onClick={() => setActiveAudience('talents')}
                 className={`px-6 py-2 rounded-md text-sm font-medium transition-colors ${
@@ -96,6 +86,16 @@ const HowItWorksPage: React.FC = () => {
               >
                 For Talents
               </button>
+              <button
+                onClick={() => setActiveAudience('employers')}
+                className={`px-6 py-2 rounded-md text-sm font-medium transition-colors ${
+                  activeAudience === 'employers'
+                    ? 'bg-white text-primary'
+                    : 'text-white hover:bg-white/5'
+                }`}
+              >
+                For Employers
+              </button>
             </div>
           </div>
         </div>
@@ -105,37 +105,7 @@ const HowItWorksPage: React.FC = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            {activeAudience === 'employers' ? (
-              <div className="space-y-12">
-                {employerSteps.map((step, index) => (
-                  <div
-                    key={index}
-                    className="relative flex items-start"
-                  >
-                    {/* Step Number */}
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white text-xl font-bold">
-                      {index + 1}
-                    </div>
-                    
-                    {/* Content */}
-                    <div className="ml-6 flex-1">
-                      <div className="rounded-lg bg-white p-6 shadow-lg">
-                        <div className="mb-4">
-                          {step.icon}
-                        </div>
-                        <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                        <p className="text-gray-600">{step.description}</p>
-                      </div>
-                    </div>
-
-                    {/* Connector Line */}
-                    {index < employerSteps.length - 1 && (
-                      <div className="absolute top-12 left-6 h-16 w-px bg-primary/20"></div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            ) : (
+            {activeAudience === 'talents' ? (
               <div className="space-y-12">
                 {talentSteps.map((step, index) => (
                   <div
@@ -165,6 +135,36 @@ const HowItWorksPage: React.FC = () => {
                   </div>
                 ))}
               </div>
+            ) : (
+              <div className="space-y-12">
+                {employerSteps.map((step, index) => (
+                  <div
+                    key={index}
+                    className="relative flex items-start"
+                  >
+                    {/* Step Number */}
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white text-xl font-bold">
+                      {index + 1}
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="ml-6 flex-1">
+                      <div className="rounded-lg bg-white p-6 shadow-lg">
+                        <div className="mb-4">
+                          {step.icon}
+                        </div>
+                        <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
+                        <p className="text-gray-600">{step.description}</p>
+                      </div>
+                    </div>
+
+                    {/* Connector Line */}
+                    {index < employerSteps.length - 1 && (
+                      <div className="absolute top-12 left-6 h-16 w-px bg-primary/20"></div>
+                    )}
+                  </div>
+                ))}
+              </div>
             )}
           </div>
         </div>
@@ -175,32 +175,32 @@ const HowItWorksPage: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-semibold mb-6">
-              {activeAudience === 'employers'
-                ? 'Ready to Find Your Next Great Hire?'
-                : 'Ready to Find Your Next Opportunity?'}
+              {activeAudience === 'talents'
+                ? 'Ready to Find Your Next Opportunity?'
+                : 'Ready to Find Your Next Great Hire?'}
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              {activeAudience === 'employers'
-                ? 'Join thousands of companies that use our platform to find and hire the best talent.'
-                : 'Browse through thousands of opportunities and find your perfect match.'}
+              {activeAudience === 'talents'
+                ? 'Browse through thousands of opportunities and find your perfect match.'
+                : 'Join thousands of companies that use our platform to find and hire the best talent.'}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              {activeAudience === 'employers' ? (
-                <>
-                  <Link to="/contact" className="btn-primary">
-                    Post a Job
-                  </Link>
-                  <Link to="/contact" className="btn-secondary">
-                    Contact Sales
-                  </Link>
-                </>
-              ) : (
+              {activeAudience === 'talents' ? (
                 <>
                   <Link to="/" className="btn-primary">
                     Browse Jobs
                   </Link>
                   <Link to="/register" className="btn-secondary">
                     Create Account
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <Link to="/contact" className="btn-primary">
+                    Post a Job
+                  </Link>
+                  <Link to="/contact" className="btn-secondary">
+                    Contact Sales
                   </Link>
                 </>
               )}
