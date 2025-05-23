@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Facebook, Mail, Phone, MapPin } from 'lucide-react';
 import Logo from './Logo';
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -17,17 +17,8 @@ const Footer: React.FC = () => {
               Transforming recruitment process with smart job posting solutions that connect the right talents with the right opportunities.
             </p>
             <div className="flex space-x-4">
-              <a href="https://facebook.com" className="text-gray-400 hover:text-primary transition-colors">
+              <a href="https://www.facebook.com/profile.php?id=100057285647017" className="text-gray-400 hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
                 <Facebook className="h-5 w-5" />
-              </a>
-              <a href="https://twitter.com" className="text-gray-400 hover:text-primary transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="https://instagram.com" className="text-gray-400 hover:text-primary transition-colors">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="https://linkedin.com" className="text-gray-400 hover:text-primary transition-colors">
-                <Linkedin className="h-5 w-5" />
               </a>
             </div>
           </div>
@@ -57,7 +48,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link to="/dashboard" className="text-gray-400 hover:text-primary transition-colors">
-                  Resources
+                  Dashboard
                 </Link>
               </li>
             </ul>

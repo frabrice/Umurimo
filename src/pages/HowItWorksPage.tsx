@@ -169,45 +169,6 @@ const HowItWorksPage: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-primary/5">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-6">
-              {activeAudience === 'talents'
-                ? 'Ready to Find Your Next Opportunity?'
-                : 'Ready to Find Your Next Great Hire?'}
-            </h2>
-            <p className="text-lg text-gray-600 mb-8">
-              {activeAudience === 'talents'
-                ? 'Browse through thousands of opportunities and find your perfect match.'
-                : 'Join thousands of companies that use our platform to find and hire the best talent.'}
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              {activeAudience === 'talents' ? (
-                <>
-                  <Link to="/" className="btn-primary">
-                    Browse Jobs
-                  </Link>
-                  <Link to="/register" className="btn-secondary">
-                    Create Account
-                  </Link>
-                </>
-              ) : (
-                <>
-                  <Link to="/contact" className="btn-primary">
-                    Post a Job
-                  </Link>
-                  <Link to="/contact" className="btn-secondary">
-                    Contact Sales
-                  </Link>
-                </>
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

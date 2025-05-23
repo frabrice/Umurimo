@@ -65,7 +65,7 @@ const Navbar: React.FC = () => {
               How It Works
             </Link>
             <Link to="/blog" className={linkClasses('/blog')}>
-              Resourses
+              The Blog Spot
             </Link>
           </div>
 
@@ -88,8 +88,8 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Navigation Menu */}
         <div
-          className={`md:hidden transition-all duration-300 ease-in-out ${
-            isOpen ? 'max-h-screen opacity-100 py-4' : 'max-h-0 opacity-0 py-0 overflow-hidden'
+          className={`md:hidden transition-all duration-300 ease-in-out bg-white ${
+            isOpen ? 'max-h-screen opacity-100 py-4 shadow-lg' : 'max-h-0 opacity-0 py-0 overflow-hidden'
           }`}
         >
           <div className="flex flex-col">
