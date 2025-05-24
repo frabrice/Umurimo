@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { LogIn, Mail, Lock } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import Logo from '../components/Logo';
@@ -46,12 +46,6 @@ const LoginPage: React.FC = () => {
         <h2 className="mt-6 text-center text-3xl font-bold text-gray-900">
           Sign in to your account
         </h2>
-        <p className="mt-2 text-center text-sm text-gray-600">
-          Or{' '}
-          <Link to="/register" className="font-medium text-primary hover:text-primary-dark">
-            create a new account
-          </Link>
-        </p>
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
@@ -121,9 +115,9 @@ const LoginPage: React.FC = () => {
               </div>
 
               <div className="text-sm">
-                <Link to="/forgot-password" className="font-medium text-primary hover:text-primary-dark">
+                <a href="#" className="font-medium text-primary hover:text-primary-dark">
                   Forgot your password?
-                </Link>
+                </a>
               </div>
             </div>
 
